@@ -86,9 +86,9 @@ export default function CreateOrphanage() {
             <legend>Dados</legend>
 
             <Map 
-              center={[-27.2092052,-49.6401092]} 
+              center={[-20.955136,-48.4704256]} 
               style={{ width: '100%', height: 280 }}
-              zoom={15}
+              zoom={14}
               onclick={handleMapClink}
             >
               <TileLayer 
@@ -129,11 +129,13 @@ export default function CreateOrphanage() {
                 return(
                     <img key={image} src={image} alt={name}/>
                 )
-              })};            
+              })}
+
               <label htmlFor="image[]" className="new-image">
                 <FiPlus size={24} color="#15b6d6" />
               </label>
               </div>
+
                 <input multiple onChange={handleSelectImages} type="file" id="image[]"/>
             </div>
           </fieldset>
@@ -142,8 +144,8 @@ export default function CreateOrphanage() {
             <legend>Visitação</legend>  
 
             <div className="input-block">
-              <label htmlFor="instructions">Instruções</label>
-              <textarea id="instructions"
+              <label htmlFor="instruction">Instruções</label>
+              <textarea id="instruction"
                value={instruction} 
                onChange={event => setInstruction(event.target.value)}
                />
